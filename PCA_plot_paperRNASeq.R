@@ -74,15 +74,6 @@ for(i in seq_len(length(stages))){
   
 }
 
-#Enriched terms 2D NF1-/-
-cells <- c("3MM", "5MM", "D12")
-enrichment.2DNF1 <- list()
-
-for (i in seq_len(length(cells))){
-  cell <- cells[i]
-  enrichment.2DNF1[[cell]] <- read.table(file = file.path(gsea.dir,"BP", paste0("Enrichment_", cell, "_BPmarkers_up_day30.csv")), sep = "\t", header = TRUE, stringsAsFactors = FALSE)
-}
-
 
 ####################################  Loading the data   ######################
 sample.data <- read.table(file = "/imppc/labs/eslab/mmagallon/Projects/RNA-Seq-timecourse.2/Sample.Info.AllSamples.3.csv", header = TRUE, sep = "\t", stringsAsFactors = FALSE,comment.char = "")

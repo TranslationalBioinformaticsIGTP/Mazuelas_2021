@@ -1,9 +1,6 @@
 library(bezier)
 
-my.points <- matrix(c(0,1,2,2,4,1.5,5,3), byrow = TRUE, ncol=2 )
-
-
-
+# my.points <- matrix(c(0,1,2,2,4,1.5,5,3), byrow = TRUE, ncol=2 )
 
 bezier.interpolate <- function(m, cp.dist.type="equal", cp.dist=0.5, npoints=100) {
   
@@ -36,17 +33,17 @@ bezier.interpolate <- function(m, cp.dist.type="equal", cp.dist=0.5, npoints=100
   return(bezier(t=t, p=bz.matrix, deg = 3))
 }
 
-
-
-plot(my.points, type = "p", xlim = c(0,5), ylim=c(0,4))
-bz.points <- bezier.interpolate(my.points, cp.dist.type = "prop", cp.dist=0.5)
-lines(bz.points, type = "l")
-
-my.points = m
-
-
-plot(my.points, type = "p", xlim = c(0,5), ylim=c(0,4))
-bz.points <- bezier.interpolate(my.points, cp.dist.type = "equal", cp.dist=0.5)
-lines(bz.points, type = "l")
+# 
+# 
+# plot(my.points, type = "p", xlim = c(0,5), ylim=c(0,4))
+# bz.points <- bezier.interpolate(my.points, cp.dist.type = "prop", cp.dist=0.5)
+# lines(bz.points, type = "l")
+# 
+# my.points = m
+# 
+# 
+# plot(my.points, type = "p", xlim = c(0,5), ylim=c(0,4))
+# bz.points <- bezier.interpolate(my.points, cp.dist.type = "equal", cp.dist=0.5)
+# lines(bz.points, type = "l")
 
 
