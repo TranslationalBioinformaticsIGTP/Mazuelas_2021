@@ -1,0 +1,38 @@
+#############################################################
+#      FiPS 2D and Spheres parameters for the pipeline       #
+#############################################################
+
+#Sample groups
+model: ["2D","3D"]
+samples.group: "Spheresvs2D"
+stages: ["PSC", "NC", "day7","day14","day30"]
+
+#Sample data information
+sample.data.file: "./Sample.Info.AllSamples.3.csv"
+genotype: ["PP",""]
+
+#Directories
+model.dir: "2Dvs3D"
+
+#Salmon parameters
+file1.suffix: "_1.fastq.gz"
+file2.suffix: "_2.fastq.gz"
+fastqdir: "/imppc/labs/eslab/mmagallon/Projects/RNA-Seq-timecourse.2/Data"
+transcript.index: "./Results/Salmon/salmon_indexes_UCSC_hg38"
+output.suffix: "_quant"
+output.quants: "./Results/Salmon"
+
+# Tximport paramenters
+org.columns: "SYMBOL"
+org.keytype: "REFSEQ"
+
+#Enrichment info
+go.terms: ["BP", "CC", "MF","KEGG"]
+
+# DESeq2 parameters
+filt.min.reads: 5
+filt.min.samples: 1
+pvalue: 0.05
+
+#Markers paramenters
+updown_markers: "up"

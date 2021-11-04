@@ -1,0 +1,38 @@
+#############################################################
+#      SC and FB from pnf parameters for the pipeline       #
+#############################################################
+
+#Sample groups
+model: ["Cells"]
+samples.group: "Cell.Type"
+stages: ["Fb","SC_NF1"]
+
+#Sample data information
+sample.data.file: "./Sample.Info.AllSamples.3.csv"
+genotype: ["MM_SC","PM_F"]
+
+#Directories
+model.dir: "FbvsSC"
+
+#Salmon parameters
+file1.suffix: "_1.fastq.gz"
+file2.suffix: "_2.fastq.gz"
+fastqdir: "/imppc/labs/eslab/mmagallon/Projects/RNA-Seq-timecourse.2/Data"
+transcript.index: "./Results/Salmon/salmon_indexes_UCSC_hg38"
+output.suffix: "_quant"
+output.quants: "./Results/Salmon"
+
+# Tximport paramenters
+org.columns: "SYMBOL"
+org.keytype: "REFSEQ"
+
+#Enrichment info
+go.terms: ["BP", "CC", "MF","KEGG"]
+
+# DESeq2 parameters
+filt.min.reads: 5
+filt.min.samples: 1
+pvalue: 0.05
+
+#Markers paramenters
+updown_markers: "up"
